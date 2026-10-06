@@ -87,10 +87,7 @@ namespace Server.App.MesHost.Forms
       dgvStore.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
 
       foreach (var tag in MesMapLayout.Tags)
-      {
-        if (tag.Area == MesTagArea.Holding)
-          dgvStore.Rows.Add(tag.Name, tag.AddressLabel, "0", tag.Description);
-      }
+        dgvStore.Rows.Add(tag.Name, tag.AddressLabel, "0", tag.Description);
     }
 
     private void RefreshUI()
@@ -110,21 +107,19 @@ namespace Server.App.MesHost.Forms
       if (_app?.Store == null) return;
       var store = _app.Store;
       var tags = MesMapLayout.Tags;
-      var row = 0;
 
-      foreach (var tag in tags)
+      for (var i = 0; i < tags.Count && i < dgvStore.Rows.Count; i++)
       {
-        if (tag.Area != MesTagArea.Holding) continue;
-        if (row >= dgvStore.Rows.Count) break;
-
+        var tag = tags[i];
         string val;
-        if (tag.DataType == MesTagDataType.DWord)
+        if (tag.Area == MesTagArea.Coil)
+          val = store.GetCoil(tag.Offset) ? "1" : "0";
+        else if (tag.DataType == MesTagDataType.DWord)
           val = store.GetDWord(tag.Offset).ToString();
         else
           val = store.GetHolding(tag.Offset).ToString();
 
-        dgvStore.Rows[row].Cells[2].Value = val;
-        row++;
+        dgvStore.Rows[i].Cells[2].Value = val;
       }
     }
 
