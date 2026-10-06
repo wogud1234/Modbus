@@ -103,9 +103,24 @@ namespace Server.App
       Store.ClearWorkCounters();
       if(bridge != null)
         bridge.NotifyWorkChanged();
+
       // WorkClear는 "설비 실적 전체를 초기화해" 라는 명령이에요.
       // 재시작해도 0이 유지돼야 하니까 파일(persist)에도 0을 써야 해요.
       // 안 쓰면 재시작 시 파일에서 이전 값이 복원되버려요.
+
+      // [Before]
+      // KepServer가 CMD=1만 쓰고 CMD=0을 다시 쓰지 않아서
+      // WorkClear_CMD, WorkClear_ACK가 영구적으로 1에 머물렀음.
+
+      // [After]
+      // 500ms 후 슬레이브가 자동 리셋 → WorkClear_ACK=0 + Cleared 이벤트 정상 발화.
+      System.Threading.Timer t = null;
+      t = new System.Threading.Timer(_ =>
+      {
+        t?.Dispose();
+        Store.SetCoil(Addresses.CoilWorkClearCmd, false);
+        workClear.OnCoilWritten(Addresses.CoilWorkClearCmd, false);
+      }, null, 500, System.Threading.Timeout.Infinite);
     }
 
     /*
@@ -150,11 +165,23 @@ namespace Server.App
     {
       RaiseLog("Data_CMD=1 -> Data_REQ=1 (clear NG coils)");
       Store.ClearMesWindowCounters();
-      // → holdings[] 카운터 전부 0으로 리셋
-      
+
+      // [Before]
+      // TrySetMesCmd(MesInterProcessLayout.MesCmd_DataRequest);
+      // → KepServer가 CMD=1만 쓰고 CMD=0을 다시 쓰지 않아서
+      //   Data_CMD, Data_REQ가 영구적으로 1에 머물렀음.
+
+      // [After]
+      // KepServer는 CMD=1을 쓴 뒤 CMD=0을 다시 쓰지 않으므로, 슬레이브가 500ms 후 자동 리셋.
+      // 하강 에지 → handshake.OnCoilWritten → Data_REQ=0 + Cleared 이벤트 정상 발화.
       TrySetMesCmd(MesInterProcessLayout.MesCmd_DataRequest);
-      // → MMF "MES Vision IF", "MES Control IF" 에 1 씀
-      // → "KepServer가 데이터 요청했어" 를 Vision/Control에 알림
+      System.Threading.Timer t = null;
+      t = new System.Threading.Timer(_ =>
+      {
+        t?.Dispose();
+        Store.SetCoil(Addresses.CoilDataCmd, false);
+        handshake.OnCoilWritten(Addresses.CoilDataCmd, false);
+      }, null, 500, System.Threading.Timeout.Infinite);
     }
 
     private void TrySetMesCmd(ushort cmd)

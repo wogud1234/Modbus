@@ -58,7 +58,9 @@ namespace Server.Map
         Coil("Start", Addresses.CoilStart, "000004", "자동시작"),
         Coil("Stop", Addresses.CoilStop, "000005", "자동정지"),
         Coil("Data_REQ", Addresses.CoilDataReq, "000006", "데이터요구 응답"),
-        Coil("Data_CMD", Addresses.CoilDataCmd, "000007", "데이터요구 (MC → PLC)"),
+        Coil("Data_CMD", Addresses.CoilDataCmd, "000007", "데이터요구 (OPC Client → MesHost)"),
+        Coil("WorkClear_CMD", Addresses.CoilWorkClearCmd, "000011", "Work 수량 초기화 명령 (OPC Client → MesHost)"),
+        Coil("WorkClear_ACK", Addresses.CoilWorkClearAck, "000012", "Work 초기화 완료 응답"),
         Coil("HEARTBEAT", Addresses.CoilHeartbeat, "001000", "통신 감시 (Heartbeat)"),
 
         DWord("Total_TestCounter",Addresses.HoldingTotalTestCounter, "400001", "총 CAN 투입 수량"),

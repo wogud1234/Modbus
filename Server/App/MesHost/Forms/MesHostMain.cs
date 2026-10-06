@@ -83,11 +83,14 @@ namespace Server.App.MesHost.Forms
       dgvStore.Columns[0].Width = 160;
       dgvStore.Columns[1].Width = 70;
       dgvStore.Columns[2].Width = 100;
-      dgvStore.Columns[3].Width = 250;
+      dgvStore.Columns[3].Width = 350;
       dgvStore.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
 
       foreach (var tag in MesMapLayout.Tags)
-        dgvStore.Rows.Add(tag.Name, tag.AddressLabel, "0", tag.Description);
+      {
+        if (tag.Area == MesTagArea.Holding)
+          dgvStore.Rows.Add(tag.Name, tag.AddressLabel, "0", tag.Description);
+      }
     }
 
     private void RefreshUI()
@@ -107,19 +110,21 @@ namespace Server.App.MesHost.Forms
       if (_app?.Store == null) return;
       var store = _app.Store;
       var tags = MesMapLayout.Tags;
+      var row = 0;
 
-      for (var i = 0; i < tags.Count && i < dgvStore.Rows.Count; i++)
+      foreach (var tag in tags)
       {
-        var tag = tags[i];
+        if (tag.Area != MesTagArea.Holding) continue;
+        if (row >= dgvStore.Rows.Count) break;
+
         string val;
-        if (tag.Area == MesTagArea.Coil)
-          val = store.GetCoil(tag.Offset) ? "1" : "0";
-        else if (tag.DataType == MesTagDataType.DWord)
+        if (tag.DataType == MesTagDataType.DWord)
           val = store.GetDWord(tag.Offset).ToString();
         else
           val = store.GetHolding(tag.Offset).ToString();
 
-        dgvStore.Rows[i].Cells[2].Value = val;
+        dgvStore.Rows[row].Cells[2].Value = val;
+        row++;
       }
     }
 

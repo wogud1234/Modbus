@@ -3,7 +3,7 @@
   "profile": "DongwonNsCanMap39",
   "writerMode": "VisionLed",
   "modbus": {
-    "listenIp": "192.168.219.100",
+    "listenIp": "192.168.219.101",
     "port": 502,
     "unitId": 1,
     "wordOrder": "CDAB",
@@ -12,7 +12,7 @@
       "WorkClear_CMD"
     ],
     "allowMasterIps": [
-      "192.168.219.101",
+      "192.168.219.100",
       "127.0.0.1",
       "::1",
       "10.0.2.1",
