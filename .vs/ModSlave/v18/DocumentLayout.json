@@ -1,0 +1,104 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\.net\\ModSlave\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{09470BEB-7DFE-4E23-A1DF-98D988677EF4}|Server\\Server.csproj|d:\\.net\\modslave\\server\\app\\meshost\\forms\\meshostmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{09470BEB-7DFE-4E23-A1DF-98D988677EF4}|Server\\Server.csproj|solutionrelative:server\\app\\meshost\\forms\\meshostmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09470BEB-7DFE-4E23-A1DF-98D988677EF4}|Server\\Server.csproj|d:\\.net\\modslave\\server\\app\\vision\\forms\\visionmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{09470BEB-7DFE-4E23-A1DF-98D988677EF4}|Server\\Server.csproj|solutionrelative:server\\app\\vision\\forms\\visionmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09470BEB-7DFE-4E23-A1DF-98D988677EF4}|Server\\Server.csproj|d:\\.net\\modslave\\server\\app\\control\\forms\\controlmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{09470BEB-7DFE-4E23-A1DF-98D988677EF4}|Server\\Server.csproj|solutionrelative:server\\app\\control\\forms\\controlmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09470BEB-7DFE-4E23-A1DF-98D988677EF4}|Server\\Server.csproj|d:\\.net\\modslave\\server\\formindex.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{09470BEB-7DFE-4E23-A1DF-98D988677EF4}|Server\\Server.csproj|solutionrelative:server\\formindex.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 217,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1391922037:0:{bf84ea66-d821-4dba-b1b1-2777d8574775}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1533084538:0:{bf84ea66-d821-4dba-b1b1-2777d8574775}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:2:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "VisionMain.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "D:\\.net\\ModSlave\\Server\\App\\Vision\\Forms\\VisionMain.cs",
+              "RelativeDocumentMoniker": "Server\\App\\Vision\\Forms\\VisionMain.cs",
+              "ToolTip": "D:\\.net\\ModSlave\\Server\\App\\Vision\\Forms\\VisionMain.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "Server\\App\\Vision\\Forms\\VisionMain.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-06T08:37:59.277Z",
+              "EditorCaption": " [\uB514\uC790\uC778]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ControlMain.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "D:\\.net\\ModSlave\\Server\\App\\Control\\Forms\\ControlMain.cs",
+              "RelativeDocumentMoniker": "Server\\App\\Control\\Forms\\ControlMain.cs",
+              "ToolTip": "D:\\.net\\ModSlave\\Server\\App\\Control\\Forms\\ControlMain.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "Server\\App\\Control\\Forms\\ControlMain.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-06T08:37:30.533Z",
+              "EditorCaption": " [\uB514\uC790\uC778]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MesHostMain.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "D:\\.net\\ModSlave\\Server\\App\\MesHost\\Forms\\MesHostMain.cs",
+              "RelativeDocumentMoniker": "Server\\App\\MesHost\\Forms\\MesHostMain.cs",
+              "ToolTip": "D:\\.net\\ModSlave\\Server\\App\\MesHost\\Forms\\MesHostMain.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "Server\\App\\MesHost\\Forms\\MesHostMain.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-06T08:37:27.324Z",
+              "EditorCaption": " [\uB514\uC790\uC778]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FormIndex.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "D:\\.net\\ModSlave\\Server\\FormIndex.cs",
+              "RelativeDocumentMoniker": "Server\\FormIndex.cs",
+              "ToolTip": "D:\\.net\\ModSlave\\Server\\FormIndex.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "Server\\FormIndex.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-06T08:32:14.473Z",
+              "EditorCaption": " [\uB514\uC790\uC778]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{09470BEB-7DFE-4E23-A1DF-98D988677EF4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Server</RootNamespace>
+    <AssemblyName>Server</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Runtime.Serialization" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App\Control\ControlApp.cs" />
+    <Compile Include="App\Control\Forms\ControlMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\Control\Forms\ControlMain.Designer.cs">
+      <DependentUpon>ControlMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\MesHost\Forms\MesHostMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\MesHost\Forms\MesHostMain.Designer.cs">
+      <DependentUpon>MesHostMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\MesHost\MesApp.cs" />
+    <Compile Include="App\Vision\Forms\VisionMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\Vision\Forms\VisionMain.Designer.cs">
+      <DependentUpon>VisionMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Vision\VisionApp.cs" />
+    <Compile Include="FormIndex.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormIndex.Designer.cs">
+      <DependentUpon>FormIndex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Assign\MesAssignS0.cs" />
+    <Compile Include="Modules\Assign\MesAssignTypes.cs" />
+    <Compile Include="Modules\Assign\MesClassNameMap.cs" />
+    <Compile Include="Modules\Assign\MesCycleModels.cs" />
+    <Compile Include="Modules\Config\MesBridgeOption.cs" />
+    <Compile Include="Modules\Config\MesHeartbeatPeers.cs" />
+    <Compile Include="Modules\Config\MesHostParameterLoader.cs" />
+    <Compile Include="Modules\Config\MesHostParams.cs" />
+    <Compile Include="Modules\Config\MesWriterMode.cs" />
+    <Compile Include="Modules\Config\ModbusConfig.cs" />
+    <Compile Include="Modules\Handshake\DataCmdHandler.cs" />
+    <Compile Include="Modules\Handshake\WorkClearHandler.cs" />
+    <Compile Include="Modules\Map\Addresses.cs" />
+    <Compile Include="Modules\Map\MesMapLayout.cs" />
+    <Compile Include="Modules\Map\MesNgPartLayout.cs" />
+    <Compile Include="Modules\Mmf\MesHeartbeatManager.cs" />
+    <Compile Include="Modules\Mmf\MesInterface.cs" />
+    <Compile Include="Modules\Mmf\MesInterProcessLayout.cs" />
+    <Compile Include="Modules\Mmf\MesMmfClear.cs" />
+    <Compile Include="Modules\Mmf\MesMmfDefine.cs" />
+    <Compile Include="Modules\Mmf\MmfBridge.cs" />
+    <Compile Include="Modules\Modbus\ModbusCodes.cs" />
+    <Compile Include="Modules\Modbus\ModbusTcpSlave.cs" />
+    <Compile Include="Modules\Persist\MesWorkPersist.cs" />
+    <Compile Include="Modules\Register\Store.cs" />
+    <Compile Include="Modules\Register\WordOrder.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="App\Control\Forms\ControlMain.resx">
+      <DependentUpon>ControlMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\MesHost\Forms\MesHostMain.resx">
+      <DependentUpon>MesHostMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Vision\Forms\VisionMain.resx">
+      <DependentUpon>VisionMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormIndex.resx">
+      <DependentUpon>FormIndex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="doc\kepserver-symptom.md" />
+    <Content Include="doc\mes-analysis-scenarios.md" />
+    <Content Include="doc\mes-client-test-scenarios.md" />
+    <Content Include="doc\mes-source-analysis.md" />
+    <Content Include="doc\MESList.xlsx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Modules\analysis\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

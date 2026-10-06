@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "profile": "DongwonNsCanMap39",
+  "writerMode": "VisionLed",
+  "modbus": {
+    "listenIp": "192.168.219.100",
+    "port": 502,
+    "unitId": 1,
+    "wordOrder": "CDAB",
+    "allowWriteCoils": [
+      "Data_CMD",
+      "WorkClear_CMD"
+    ],
+    "allowMasterIps": [
+      "127.0.0.1",
+      "::1",
+      "10.0.2.1",
+      "10.0.2.2",
+      "10.0.2.164",
+      "10.0.2.165"
+    ]
+  },
+  "bridge": {
+    "pollMs": 50,
+    "heartbeatIntervalMs": 1000,
+    "heartbeatPeers": "Both",
+    "allowControlCounterOverwrite": false,
+    "applyControlLineState": true,
+    "applyVisionWorkCounters": true,
+    "applyVisionNgPart": true,
+    "recalcPercentOnUpdate": true
+  },
+  "mmf": {
+    "heartbeatByteSize": 16,
+    "interfaceByteSize": 128,
+    "pairs": {
+      "vision": {
+        "appHeartbeat": "Vision MES",       
+        "appInterface": "Vision MES IF",
+        "hostHeartbeat": "MES Vision",
+        "hostInterface": "MES Vision IF"
+      },
+      "control": {
+        "appHeartbeat": "Control MES",
+        "appInterface": "Control MES IF",
+        "hostHeartbeat": "MES Control",
+        "hostInterface": "MES Control IF"
+      }
+    }
+  },
+  "map": {
+    "coilCount": 1000,
+    "holdingCount": 62,
+    "ngParts": {
+      "enabled": true,
+      "role": "VisionNgPart",
+      "dataType": "DWord",
+      "startAddress": 400017,
+      "stride": 2,
+      "zones": [
+        "Inner1",
+        "Inner2",
+        "Outer"
+      ],
+      "types": [
+        "얼룩",
+        "긁힘",
+        "찍힘"
+      ]
+    },
+    "sideSlots": {
+      "cameras": 3,
+      "roiPerCamera": 4,
+      "coilStartAddress": 14,
+      "ngPartStartAddress": 400043,
+      "types": [
+        "얼룩",
+        "긁힘",
+        "찍힘"
+      ]
+    }
+  }
+}

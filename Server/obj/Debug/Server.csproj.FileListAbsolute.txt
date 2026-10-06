@@ -1,0 +1,13 @@
+D:\.net\ModSlave\Server\bin\Debug\Server.exe.config
+D:\.net\ModSlave\Server\bin\Debug\Server.exe
+D:\.net\ModSlave\Server\bin\Debug\Server.pdb
+D:\.net\ModSlave\Server\obj\Debug\Server.csproj.AssemblyReference.cache
+D:\.net\ModSlave\Server\obj\Debug\Server.Properties.Resources.resources
+D:\.net\ModSlave\Server\obj\Debug\Server.csproj.GenerateResource.cache
+D:\.net\ModSlave\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+D:\.net\ModSlave\Server\obj\Debug\Server.exe
+D:\.net\ModSlave\Server\obj\Debug\Server.pdb
+D:\.net\ModSlave\Server\obj\Debug\Server.App.Control.Forms.ControlMain.resources
+D:\.net\ModSlave\Server\obj\Debug\Server.App.MesHost.Forms.MesHostMain.resources
+D:\.net\ModSlave\Server\obj\Debug\Server.App.Vision.Forms.VisionMain.resources
+D:\.net\ModSlave\Server\obj\Debug\Server.FormIndex.resources
